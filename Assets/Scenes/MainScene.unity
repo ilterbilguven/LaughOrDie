@@ -172,6 +172,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup_Ammo_Revolver (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3051867580265285794, guid: b9941c59cf8d0254ea8a16ecae6661f7,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 3184958219604596622, guid: f46583e745abc4c249128bc42cc582fc,
+        type: 3}
     - target: {fileID: 3051867580265285798, guid: b9941c59cf8d0254ea8a16ecae6661f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -349,6 +355,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup_Ammo_Revolver
       objectReference: {fileID: 0}
+    - target: {fileID: 3051867580265285794, guid: b9941c59cf8d0254ea8a16ecae6661f7,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 3184958219604596622, guid: f46583e745abc4c249128bc42cc582fc,
+        type: 3}
     - target: {fileID: 3051867580265285798, guid: b9941c59cf8d0254ea8a16ecae6661f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -883,6 +895,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup_Ammo_Revolver (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3051867580265285794, guid: b9941c59cf8d0254ea8a16ecae6661f7,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 3184958219604596622, guid: f46583e745abc4c249128bc42cc582fc,
+        type: 3}
     - target: {fileID: 3051867580265285798, guid: b9941c59cf8d0254ea8a16ecae6661f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -981,6 +999,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup_Ammo_Revolver (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3051867580265285794, guid: b9941c59cf8d0254ea8a16ecae6661f7,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 3184958219604596622, guid: f46583e745abc4c249128bc42cc582fc,
+        type: 3}
     - target: {fileID: 3051867580265285798, guid: b9941c59cf8d0254ea8a16ecae6661f7,
         type: 3}
       propertyPath: m_LocalPosition.x
