@@ -503,9 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b4f98e62f1d104f8658bba08e5d56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingWeapons:
-  - {fileID: 3184958219604596622, guid: f46583e745abc4c249128bc42cc582fc, type: 3}
-  - {fileID: 1498822298103341515, guid: 55b174b902fcd4e45a5165911498f0b2, type: 3}
+  StartingWeapons: []
   WeaponCamera: {fileID: 2286125971047457827}
   WeaponParentSocket: {fileID: 3891163784698469781}
   DefaultWeaponPosition: {fileID: 4354021110288562838}
