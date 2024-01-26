@@ -184,7 +184,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 8c2f8cfea632c3c41a7abc68f0ed0a93, type: 3}
       propertyPath: m_Name
-      value: Casing
+      value: Shotgun_ShellCasing
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8c2f8cfea632c3c41a7abc68f0ed0a93, type: 3}
       propertyPath: m_IsActive
@@ -266,10 +266,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -4122911500274376060}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8c2f8cfea632c3c41a7abc68f0ed0a93,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4269534043413021976}
   m_SourcePrefab: {fileID: 100100000, guid: 8c2f8cfea632c3c41a7abc68f0ed0a93, type: 3}
 --- !u!4 &5924542969973279776 stripped
 Transform:
@@ -310,25 +306,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &4269534043413021976
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924542969973313536}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 8c2f8cfea632c3c41a7abc68f0ed0a93, type: 3}
