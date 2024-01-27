@@ -1,4 +1,6 @@
-﻿using Unity.FPS.Game;
+﻿using System.Collections;
+using Game.Scripts.Controllers;
+using Unity.FPS.Game;
 using UnityEngine;
 
 namespace Unity.FPS.AI
@@ -35,6 +37,7 @@ namespace Unity.FPS.AI
         float m_TimeLostDetection;
         Quaternion m_PreviousPivotAimingRotation;
         Quaternion m_PivotAimingRotation;
+        private Coroutine _enemyLoopCoroutine;
 
         const string k_AnimOnDamagedParameter = "OnDamaged";
         const string k_AnimIsActiveParameter = "IsActive";
@@ -61,17 +64,33 @@ namespace Unity.FPS.AI
 
             m_TimeStartedDetection = Mathf.NegativeInfinity;
             m_PreviousPivotAimingRotation = TurretPivot.rotation;
+
+            _enemyLoopCoroutine = StartCoroutine(EnemyLoopCoroutine());
+            GameController.GameEnded += OnGameEnded;
         }
 
-        void Update()
+        private IEnumerator EnemyLoopCoroutine()
         {
             UpdateCurrentAiState();
+            yield return null;
         }
 
         void LateUpdate()
         {
             UpdateTurretAiming();
         }
+        
+        private void OnGameEnded()
+        {
+            GameController.GameEnded -= OnGameEnded;
+
+            if (_enemyLoopCoroutine != null)
+            {
+                StopCoroutine(_enemyLoopCoroutine);
+                _enemyLoopCoroutine = null;
+            }
+        }
+
 
         void UpdateCurrentAiState()
         {

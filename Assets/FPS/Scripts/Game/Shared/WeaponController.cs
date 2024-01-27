@@ -379,7 +379,7 @@ namespace Unity.FPS.Game
                         TryBeginCharge();
                     }
 
-                    // Check if we released charge or if the weapon shoot autmatically when it's fully charged
+                    // Check if we released charge or if the weapon shoot automatically when it's fully charged
                     if (inputUp || (AutomaticReleaseOnCharged && CurrentCharge >= 1f))
                     {
                         return TryReleaseCharge();

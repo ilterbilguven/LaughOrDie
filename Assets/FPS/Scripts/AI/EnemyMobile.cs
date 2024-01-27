@@ -1,4 +1,6 @@
-﻿using Unity.FPS.Game;
+﻿using System.Collections;
+using Game.Scripts.Controllers;
+using Unity.FPS.Game;
 using UnityEngine;
 
 namespace Unity.FPS.AI
@@ -36,6 +38,8 @@ namespace Unity.FPS.AI
         const string k_AnimAttackParameter = "Attack";
         const string k_AnimAlertedParameter = "Alerted";
         const string k_AnimOnDamagedParameter = "OnDamaged";
+        
+        private Coroutine _enemyLoopCoroutine;
 
         void Start()
         {
@@ -57,21 +61,40 @@ namespace Unity.FPS.AI
             DebugUtility.HandleErrorIfNullGetComponent<AudioSource, EnemyMobile>(m_AudioSource, this, gameObject);
             m_AudioSource.clip = MovementSound;
             m_AudioSource.Play();
+
+            _enemyLoopCoroutine = StartCoroutine(EnemyLoopCoroutine());
+            GameController.GameEnded += OnGameEnded;
         }
 
-        void Update()
+        private void OnGameEnded()
         {
-            UpdateAiStateTransitions();
-            UpdateCurrentAiState();
+            GameController.GameEnded -= OnGameEnded;
 
-            float moveSpeed = m_EnemyController.NavMeshAgent.velocity.magnitude;
+            if (_enemyLoopCoroutine != null)
+            {
+                StopCoroutine(_enemyLoopCoroutine);
+                _enemyLoopCoroutine = null;
+            }
+        }
 
-            // Update animator speed parameter
-            Animator.SetFloat(k_AnimMoveSpeedParameter, moveSpeed);
+        private IEnumerator EnemyLoopCoroutine()
+        {
+            while (true)
+            {
+                UpdateAiStateTransitions();
+                UpdateCurrentAiState();
 
-            // changing the pitch of the movement sound depending on the movement speed
-            m_AudioSource.pitch = Mathf.Lerp(PitchDistortionMovementSpeed.Min, PitchDistortionMovementSpeed.Max,
-                moveSpeed / m_EnemyController.NavMeshAgent.speed);
+                float moveSpeed = m_EnemyController.NavMeshAgent.velocity.magnitude;
+
+                // Update animator speed parameter
+                Animator.SetFloat(k_AnimMoveSpeedParameter, moveSpeed);
+
+                // changing the pitch of the movement sound depending on the movement speed
+                m_AudioSource.pitch = Mathf.Lerp(PitchDistortionMovementSpeed.Min, PitchDistortionMovementSpeed.Max,
+                    moveSpeed / m_EnemyController.NavMeshAgent.speed);
+
+                yield return null;
+            }
         }
 
         void UpdateAiStateTransitions()
