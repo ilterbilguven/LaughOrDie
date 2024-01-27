@@ -43,15 +43,9 @@ namespace AiActors.Scripts
             _input.Normalize();
 
             var maxSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
-            var targetVelocity = maxSpeed * GetDirection();
+            var targetVelocity = maxSpeed * _input;
 
             _velocity = Vector3.MoveTowards(_velocity, targetVelocity, accelaration * Time.deltaTime);
-        }
-
-        private Vector3 GetDirection()
-        {
-            var direction = _input.x * _myTransform.right + _input.z * _myTransform.forward;
-            return _myTransform.rotation * direction;
         }
     }
 }
