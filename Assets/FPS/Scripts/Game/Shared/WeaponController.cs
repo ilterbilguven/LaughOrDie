@@ -77,6 +77,8 @@ namespace Unity.FPS.Game
         public bool AutomaticReload = true;
         [Tooltip("Has physical clip on the weapon and ammo shells are ejected when firing")]
         public bool HasPhysicalBullets = false;
+        [Tooltip("Set to true if you want to handle shell ejection from elsewhere (ie. Animation Event)")]
+        public bool ExternalShellEjector = false;
         [Tooltip("Number of bullets in a clip")]
         public int ClipSize = 30;
         [Tooltip("Bullet Shell Casing")]
@@ -470,7 +472,7 @@ namespace Unity.FPS.Game
                 Destroy(muzzleFlashInstance, 2f);
             }
 
-            if (HasPhysicalBullets)
+            if (HasPhysicalBullets && !ExternalShellEjector)
             {
                 ShootShell();
                 m_CarriedPhysicalBullets--;
