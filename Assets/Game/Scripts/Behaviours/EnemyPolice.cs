@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using Game.Scripts.Controllers;
 using Unity.FPS.AI;
 using Unity.FPS.Game;
 using Unity.FPS.Gameplay;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game.Scripts.Behaviours
 {
@@ -76,7 +78,17 @@ namespace Game.Scripts.Behaviours
             GameController.GameEnded += OnGameEnded;
         }
 
+        private void OnDestroy()
+        {
+            Dispose();
+        }
+
         private void OnGameEnded()
+        {
+            Dispose();
+        }
+
+        private void Dispose()
         {
             GameController.GameEnded -= OnGameEnded;
 
