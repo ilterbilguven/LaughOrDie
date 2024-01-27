@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,6 +17,7 @@ namespace Unity.FPS.Gameplay
             PutUpNew,
         }
 
+        [AssetSelector]
         [Tooltip("List of weapon the player will start with")]
         public List<WeaponController> StartingWeapons = new List<WeaponController>();
 

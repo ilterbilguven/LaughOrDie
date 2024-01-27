@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
@@ -135,30 +136,30 @@ namespace Unity.FPS.Game
         public event Action OnShootProcessed;
 
         int m_CarriedPhysicalBullets;
-        float m_CurrentAmmo;
+        [ShowInInspector, HideInEditorMode, ReadOnly] float m_CurrentAmmo;
         float m_LastTimeShot = Mathf.NegativeInfinity;
         public float LastChargeTriggerTimestamp { get; private set; }
         Vector3 m_LastMuzzlePosition;
 
-        public GameObject Owner { get; set; }
-        public GameObject SourcePrefab { get; set; }
-        public bool IsCharging { get; private set; }
-        public float CurrentAmmoRatio { get; private set; }
-        public bool IsWeaponActive { get; private set; }
-        public bool IsCooling { get; private set; }
-        public float CurrentCharge { get; private set; }
-        public Vector3 MuzzleWorldVelocity { get; private set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public GameObject Owner { get; set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public GameObject SourcePrefab { get; set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public bool IsCharging { get; private set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public float CurrentAmmoRatio { get; private set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public bool IsWeaponActive { get; private set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public bool IsCooling { get; private set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public float CurrentCharge { get; private set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public Vector3 MuzzleWorldVelocity { get; private set; }
 
-        public float GetAmmoNeededToShoot() =>
+        [ShowInInspector, HideInEditorMode, ReadOnly] public float GetAmmoNeededToShoot() =>
             (ShootType != WeaponShootType.Charge ? 1f : Mathf.Max(1f, AmmoUsedOnStartCharge)) /
             (MaxAmmo * BulletsPerShot);
 
-        public int GetCarriedPhysicalBullets() => m_CarriedPhysicalBullets;
-        public int GetCurrentAmmo() => Mathf.FloorToInt(m_CurrentAmmo);
+        [ShowInInspector, HideInEditorMode, ReadOnly] public int GetCarriedPhysicalBullets() => m_CarriedPhysicalBullets;
+        [ShowInInspector, HideInEditorMode, ReadOnly] public int GetCurrentAmmo() => Mathf.FloorToInt(m_CurrentAmmo);
 
         AudioSource m_ShootAudioSource;
 
-        public bool IsReloading { get; private set; }
+        [ShowInInspector, HideInEditorMode, ReadOnly] public bool IsReloading { get; private set; }
 
         const string k_AnimAttackParameter = "Attack";
 
@@ -197,6 +198,7 @@ namespace Unity.FPS.Game
             }
         }
 
+        [Button]
         public void AddCarriablePhysicalBullets(int count) => m_CarriedPhysicalBullets = Mathf.Max(m_CarriedPhysicalBullets + count, MaxAmmo);
 
         void ShootShell()
