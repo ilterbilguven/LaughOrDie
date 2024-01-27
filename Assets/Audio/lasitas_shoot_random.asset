@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8326296589838560821
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 6_{-8326296589838560821}
+  m_AudioClip: {fileID: 8300000, guid: 5d0dc28da4481405aa1bf01165e06b53, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6052248179139740919
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2_{-6052248179139740919}
+  m_AudioClip: {fileID: 8300000, guid: 381b61b13ae854ad8961af472c36d199, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4705763085631897058
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 4_{-4705763085631897058}
+  m_AudioClip: {fileID: 8300000, guid: 9a12d51cee41f49cbba3388a452cf775, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2362553675897559879
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 5_{-2362553675897559879}
+  m_AudioClip: {fileID: 8300000, guid: 3e384b315c1584a7eb19b92a9413dcbd, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1070723566583738656
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 1_{-1070723566583738656}
+  m_AudioClip: {fileID: 8300000, guid: ce6c9b47292bf43c397b8737b6505281, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-927618508510050791
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 7_{-927618508510050791}
+  m_AudioClip: {fileID: 8300000, guid: c19e26d10ff8643bfa51127faf0b698f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-568625282957473735
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 9_{-568625282957473735}
+  m_AudioClip: {fileID: 8300000, guid: f08c633665e6f425db99430332ffbf78, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &2777561295047790571
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 8_{2777561295047790571}
+  m_AudioClip: {fileID: 8300000, guid: 620a60a35d8de4ae98611c6ea8daec15, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: lasitas_shoot_random
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: -4.042759, y: 0.8551979}
+  m_PitchRandomizationRange: {x: -107.288635, y: 121.282776}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -568625282957473735}
+  - {fileID: 2777561295047790571}
+  - {fileID: -1070723566583738656}
+  - {fileID: -6052248179139740919}
+  - {fileID: 6962958028332674836}
+  - {fileID: -4705763085631897058}
+  - {fileID: -2362553675897559879}
+  - {fileID: -8326296589838560821}
+  - {fileID: -927618508510050791}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 0
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 1
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &6962958028332674836
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 3_{6962958028332674836}
+  m_AudioClip: {fileID: 8300000, guid: 207c0cf36aa514cc98e94cdf96aa7c30, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
