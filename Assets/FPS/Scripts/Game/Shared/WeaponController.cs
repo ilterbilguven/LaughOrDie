@@ -472,6 +472,13 @@ namespace Unity.FPS.Game
             {
                 ShootShell();
                 m_CarriedPhysicalBullets--;
+                
+                // Set Last Bullet
+                if (WeaponAnimator)
+                {
+                    var round = Mathf.RoundToInt(m_CurrentAmmo);
+                    WeaponAnimator.SetBool("LastBullet", round == 1);
+                }
             }
 
             m_LastTimeShot = Time.time;
