@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5515996274255070009}
   - component: {fileID: 4589332107309326984}
   m_Layer: 0
-  m_Name: Weapon_Glock
+  m_Name: Weapon_GlockSilenced
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   WeaponRoot: {fileID: 6222562593918445964}
   WeaponMuzzle: {fileID: 6201517439934969264}
   ShootType: 0
-  ProjectilePrefab: {fileID: 7845855233597972401, guid: c762e0f0c1150467fa8303070531444c,
+  ProjectilePrefab: {fileID: 7845855233597972401, guid: eb509ba7a682b45e5a3f788b57bf37b8,
     type: 3}
   DelayBetweenShots: 0.13
   BulletSpreadAngle: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   AutomaticReload: 0
   HasPhysicalBullets: 1
   ClipSize: 17
-  ShellCasing: {fileID: 8665941358530303471, guid: 3289acbbc52324575a6fd5f41a667cf1,
+  ShellCasing: {fileID: 8665941358530303471, guid: 395a629185fb54f6ca9da313e8dfd089,
     type: 3}
   EjectionPort: {fileID: 8500978831043898126}
   ShellCasingEjectionForce: 1.5
@@ -309,6 +309,80 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &7227793354121830773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 649258184480459915}
+    m_Modifications:
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.209
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655180175298284364, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Muffler_01_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d569399ee9d7444abbb600ac1d5f7e1, type: 3}
+--- !u!4 &1041156204922910233 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7655180175298254700, guid: 9d569399ee9d7444abbb600ac1d5f7e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7227793354121830773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7755840253985084586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -393,7 +467,11 @@ PrefabInstance:
     - {fileID: 729180212363831758, guid: 0b652d1f8740ca84e896665741f79bd5, type: 3}
     - {fileID: 9142256885995253627, guid: 0b652d1f8740ca84e896665741f79bd5, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7106934742826473505, guid: 0b652d1f8740ca84e896665741f79bd5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1041156204922910233}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b652d1f8740ca84e896665741f79bd5, type: 3}
 --- !u!4 &649258184480459915 stripped

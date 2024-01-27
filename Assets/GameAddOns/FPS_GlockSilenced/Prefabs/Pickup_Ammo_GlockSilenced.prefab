@@ -4875,7 +4875,7 @@ GameObject:
   - component: {fileID: 1664649180722330872}
   - component: {fileID: 4587788378737708809}
   m_Layer: 0
-  m_Name: Pickup_Ammo_Glock
+  m_Name: Pickup_Ammo_GlockSilenced
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4963,7 +4963,7 @@ MonoBehaviour:
   RotatingSpeed: 360
   PickupSfx: {fileID: 8300000, guid: 6f3e0904bbbace745bdef08cdbcdfec0, type: 3}
   PickupVfxPrefab: {fileID: 0}
-  Weapon: {fileID: 8658705361937636582, guid: 04bf462f48e2441f0aeeeba4f7f62c7a, type: 3}
+  Weapon: {fileID: 8658705361937636582, guid: fb231ed6b91594f5dbfe08b7321bd3a4, type: 3}
   BulletCount: 30
 --- !u!1001 &6976517795082296503
 PrefabInstance:
