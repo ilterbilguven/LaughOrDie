@@ -305,7 +305,7 @@ namespace Unity.FPS.AI
 
         public void SetNavDestination(Vector3 destination)
         {
-            if (NavMeshAgent)
+            if (NavMeshAgent && NavMeshAgent.isOnNavMesh)
             {
                 NavMeshAgent.SetDestination(destination);
             }
