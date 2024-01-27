@@ -138,7 +138,7 @@ MonoBehaviour:
     type: 3}
   ImpactVfxLifetime: 5
   ImpactVfxSpawnOffset: 0.1
-  ImpactSfxClip: {fileID: 8300000, guid: ebe0b804a87ebaf48af783a59ffde04e, type: 3}
+  ImpactSfxClip: {fileID: 0}
   HittableLayers:
     serializedVersion: 2
     m_Bits: 3383
