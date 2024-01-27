@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 3519074652530653388}
   - component: {fileID: 6824610229861301895}
   - component: {fileID: 264486597375918153}
+  - component: {fileID: 2914376142152327439}
   m_Layer: 0
   m_Name: Enemy_Police
   m_TagString: Untagged
@@ -872,6 +873,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2914376142152327439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787222724335606252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb1236a847646c28695b6c6121f564b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 3225453833826952389}
+  motionAnimationHandler: {fileID: 266039535272997032}
 --- !u!1 &8361561201629412669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,10 +1131,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main_Character
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: cee87b383744f4b349af6db54d30bb83,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 868f5aec25ffe473784dc8d083fbafe6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cee87b383744f4b349af6db54d30bb83,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 266039535272997032}
   m_SourcePrefab: {fileID: 100100000, guid: cee87b383744f4b349af6db54d30bb83, type: 3}
 --- !u!95 &4029569587737197218 stripped
 Animator:
@@ -1133,3 +1157,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7386322960904767283}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7656141669708298850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cee87b383744f4b349af6db54d30bb83,
+    type: 3}
+  m_PrefabInstance: {fileID: 7386322960904767283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &266039535272997032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7656141669708298850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5956596c315847b9bca968a3adcbd972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 8
+  walkSpeed: 3.5
+  animator: {fileID: 4029569587737197218}

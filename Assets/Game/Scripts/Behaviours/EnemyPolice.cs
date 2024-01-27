@@ -2,6 +2,7 @@ using System.Collections;
 using Game.Scripts.Controllers;
 using Unity.FPS.AI;
 using Unity.FPS.Game;
+using Unity.FPS.Gameplay;
 using UnityEngine;
 
 namespace Game.Scripts.Behaviours
@@ -10,7 +11,6 @@ namespace Game.Scripts.Behaviours
     {
         public enum AIState
         {
-            Patrol,
             Follow,
             Attack,
         }
@@ -38,6 +38,19 @@ namespace Game.Scripts.Behaviours
         const string k_AnimAttackParameter = "Attack";
         const string k_AnimAlertedParameter = "Alerted";
         const string k_AnimOnDamagedParameter = "OnDamaged";
+
+        private PlayerCharacterController _player;
+
+        public PlayerCharacterController Player
+        {
+            get
+            {
+                if(_player == null)
+                    _player = FindObjectOfType<PlayerCharacterController>();
+
+                return _player;
+            }
+        }
         
         private Coroutine _enemyLoopCoroutine;
 
@@ -48,13 +61,10 @@ namespace Game.Scripts.Behaviours
                 gameObject);
 
             m_EnemyController.onAttack += OnAttack;
-            m_EnemyController.onDetectedTarget += OnDetectedTarget;
-            m_EnemyController.onLostTarget += OnLostTarget;
-            m_EnemyController.SetPathDestinationToClosestNode();
             m_EnemyController.onDamaged += OnDamaged;
+            m_EnemyController.SetPathDestinationToClosestNode();
 
-            // Start patrolling
-            AiState = AIState.Patrol;
+            AiState = AIState.Follow;
 
             // adding a audio source to play the movement sound on it
             m_AudioSource = GetComponent<AudioSource>();
@@ -111,15 +121,14 @@ namespace Game.Scripts.Behaviours
                         AiState = AIState.Attack;
                         m_EnemyController.SetNavDestination(transform.position);
                     }
-
                     break;
+                
                 case AIState.Attack:
                     // Transition to follow when no longer a target in attack range
                     if (!m_EnemyController.IsTargetInAttackRange)
                     {
                         AiState = AIState.Follow;
                     }
-
                     break;
             }
         }
@@ -129,21 +138,17 @@ namespace Game.Scripts.Behaviours
             // Handle logic 
             switch (AiState)
             {
-                case AIState.Patrol:
-                    m_EnemyController.UpdatePathDestination();
-                    m_EnemyController.SetNavDestination(m_EnemyController.GetDestinationOnPath());
-                    break;
                 case AIState.Follow:
-                    m_EnemyController.SetNavDestination(m_EnemyController.KnownDetectedTarget.transform.position);
-                    m_EnemyController.OrientTowards(m_EnemyController.KnownDetectedTarget.transform.position);
-                    m_EnemyController.OrientWeaponsTowards(m_EnemyController.KnownDetectedTarget.transform.position);
+                    m_EnemyController.SetNavDestination(Player.transform.position);
+                    m_EnemyController.OrientTowards(Player.transform.position);
+                    m_EnemyController.OrientWeaponsTowards(Player.transform.position);
                     break;
                 case AIState.Attack:
-                    if (Vector3.Distance(m_EnemyController.KnownDetectedTarget.transform.position,
+                    if (Vector3.Distance(Player.transform.position,
                             m_EnemyController.DetectionModule.DetectionSourcePoint.position)
                         >= (AttackStopDistanceRatio * m_EnemyController.DetectionModule.AttackRange))
                     {
-                        m_EnemyController.SetNavDestination(m_EnemyController.KnownDetectedTarget.transform.position);
+                        m_EnemyController.SetNavDestination(Player.transform.position);
                     }
                     else
                     {
@@ -155,45 +160,10 @@ namespace Game.Scripts.Behaviours
                     break;
             }
         }
-
+        
         void OnAttack()
         {
             Animator.SetTrigger(k_AnimAttackParameter);
-        }
-
-        void OnDetectedTarget()
-        {
-            if (AiState == AIState.Patrol)
-            {
-                AiState = AIState.Follow;
-            }
-
-            for (int i = 0; i < OnDetectVfx.Length; i++)
-            {
-                OnDetectVfx[i].Play();
-            }
-
-            if (OnDetectSfx)
-            {
-                AudioUtility.CreateSFX(OnDetectSfx, transform.position, AudioUtility.AudioGroups.EnemyDetection, 1f);
-            }
-
-            Animator.SetBool(k_AnimAlertedParameter, true);
-        }
-
-        void OnLostTarget()
-        {
-            if (AiState == AIState.Follow || AiState == AIState.Attack)
-            {
-                AiState = AIState.Patrol;
-            }
-
-            for (int i = 0; i < OnDetectVfx.Length; i++)
-            {
-                OnDetectVfx[i].Stop();
-            }
-
-            Animator.SetBool(k_AnimAlertedParameter, false);
         }
 
         void OnDamaged()

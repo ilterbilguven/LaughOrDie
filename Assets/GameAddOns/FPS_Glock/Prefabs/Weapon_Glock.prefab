@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 747614104381055740}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00049999356, y: 0.1534, z: 0.29}
+  m_LocalPosition: {x: -0.00049999356, y: 0.1259, z: 0.472}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,7 +156,7 @@ MonoBehaviour:
   WeaponRoot: {fileID: 6222562593918445964}
   WeaponMuzzle: {fileID: 6201517439934969264}
   ShootType: 0
-  ProjectilePrefab: {fileID: 7845855233597972401, guid: eb509ba7a682b45e5a3f788b57bf37b8,
+  ProjectilePrefab: {fileID: 7845855233597972401, guid: c762e0f0c1150467fa8303070531444c,
     type: 3}
   DelayBetweenShots: 0.13
   BulletSpreadAngle: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   AutomaticReload: 0
   HasPhysicalBullets: 1
   ClipSize: 17
-  ShellCasing: {fileID: 8665941358530303471, guid: 395a629185fb54f6ca9da313e8dfd089,
+  ShellCasing: {fileID: 8665941358530303471, guid: 3289acbbc52324575a6fd5f41a667cf1,
     type: 3}
   EjectionPort: {fileID: 8500978831043898126}
   ShellCasingEjectionForce: 1.5
