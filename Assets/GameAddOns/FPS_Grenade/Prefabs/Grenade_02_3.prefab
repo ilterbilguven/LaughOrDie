@@ -156,7 +156,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3383
   timeToExplosion: 3
-  explosionFx: {fileID: 0}
+  explosionFx: {fileID: 198202731371243394, guid: 65932b7368590234d8163da03c2055d8,
+    type: 3}
 --- !u!1001 &5826548943101524017
 PrefabInstance:
   m_ObjectHideFlags: 0
