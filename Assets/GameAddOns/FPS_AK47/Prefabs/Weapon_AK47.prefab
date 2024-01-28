@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 5203803761154170980}
   - component: {fileID: 5987412452955364879}
   - component: {fileID: 1814556285869578584}
+  - component: {fileID: -4934088349916697685}
   m_Layer: 0
   m_Name: Weapon_AK47
   m_TagString: Untagged
@@ -110,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad90ba0b1477764da373f5ec01a8cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponName: Haku
+  WeaponName: AK47
   WeaponIcon: {fileID: 21300000, guid: d6a01b0352f25e94d94e26fc2156ab75, type: 3}
   CrosshairDataDefault:
     CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
@@ -125,7 +126,7 @@ MonoBehaviour:
   ShootType: 1
   ProjectilePrefab: {fileID: 7845855233597972401, guid: f2893887baef64e869de1ceaaeb5437a,
     type: 3}
-  DelayBetweenShots: 0.1
+  DelayBetweenShots: 0.15
   BulletSpreadAngle: 1
   BulletsPerShot: 1
   RecoilForce: 0.05
@@ -151,7 +152,8 @@ MonoBehaviour:
   MuzzleFlashPrefab: {fileID: 8498587000198816097, guid: d22d8e744dd054147977b20498e33c39,
     type: 3}
   UnparentMuzzleFlash: 0
-  ShootSfx: {fileID: 8300000, guid: 640e03b192ae4e440923f2228ade44f2, type: 3}
+  ShootSfx: {fileID: 6418180475301049370, guid: 5ef571c54755741728466d2e196ef8a4,
+    type: 2}
   ChangeWeaponSfx: {fileID: 0}
   UseContinuousShootSound: 0
   ContinuousShootStartSfx: {fileID: 0}
@@ -171,7 +173,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -290,6 +292,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTypes: 3
+--- !u!114 &-4934088349916697685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243174873070656758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abeb1843f10e467cb044a5723f09532a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReloadingSound: {fileID: 8300000, guid: 0232fbf21ff7a4e04904afb9cef5be33, type: 3}
+  AmmoToVolumeRatioCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.25
+      outSlope: 1.25
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 1
+      inSlope: -0.0030681617
+      outSlope: -0.0030681617
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5375985409310503816
 GameObject:
   m_ObjectHideFlags: 0
