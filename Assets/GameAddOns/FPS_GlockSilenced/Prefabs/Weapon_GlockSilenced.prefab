@@ -167,6 +167,7 @@ MonoBehaviour:
   AimOffset: {x: 0.121, y: 0.11, z: 0}
   AutomaticReload: 0
   HasPhysicalBullets: 1
+  ExternalShellEjector: 0
   ClipSize: 17
   ShellCasing: {fileID: 8665941358530303471, guid: 395a629185fb54f6ca9da313e8dfd089,
     type: 3}
@@ -420,7 +421,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muffler_01_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 671440345364420256, guid: 9d569399ee9d7444abbb600ac1d5f7e1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

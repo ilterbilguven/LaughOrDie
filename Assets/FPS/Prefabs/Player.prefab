@@ -139,6 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbfa6711947845a19cd1da551d96422e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
+  maxGrenades: 0
+  currentGrenades: 0
   throwForce: 5
   grenade: {fileID: 921293384010358145, guid: 9b8840a2188fc4a2e8a4be67daed316c, type: 3}
   grenadeThrowTransform: {fileID: 1714592793856415456}
@@ -184,7 +187,7 @@ Camera:
   m_GameObject: {fileID: 2703355619797536407}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -551,7 +554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b4f98e62f1d104f8658bba08e5d56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingWeapons: []
+  StartingWeapons:
+  - {fileID: 8658705361937636582, guid: 04bf462f48e2441f0aeeeba4f7f62c7a, type: 3}
   WeaponCamera: {fileID: 2286125971047457827}
   WeaponParentSocket: {fileID: 3891163784698469781}
   DefaultWeaponPosition: {fileID: 4354021110288562838}
