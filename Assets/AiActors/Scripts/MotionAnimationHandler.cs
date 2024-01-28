@@ -10,6 +10,7 @@ namespace AiActors.Scripts
 
         public Vector3 Velocity { get; set; }
 
+        #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             var forwardVelocity = Vector3.Project(Velocity, transform.forward);
@@ -33,6 +34,7 @@ namespace AiActors.Scripts
             UnityEditor.Handles.color = Color.magenta;
             UnityEditor.Handles.DrawLine(transform.position, transform.position + rightVelocity, 1);
         }
+        #endif
 
         private void Update()
         {
