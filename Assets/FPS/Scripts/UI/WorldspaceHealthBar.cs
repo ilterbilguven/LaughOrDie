@@ -42,7 +42,7 @@ namespace Unity.FPS.UI
                 _healthBarDisabling = true;
                 HealthBarImage.DOFade(0, 0.15f).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    HealthBarImage.gameObject.SetActive(false);
+                    HealthBarPivot.gameObject.SetActive(false);
                 });
             }
             
