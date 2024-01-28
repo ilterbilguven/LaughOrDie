@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418f7a59b20f8416897b6031e265d3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingEnemy: 10
+  startingEnemy: 5
   maxEnemy: 40
-  spawnInterval: 7
+  spawnInterval: 4
   enemyPrefabs:
   - {fileID: 297762696896937442, guid: eec04e30c9566478ba0119ead9b62593, type: 3}
   - {fileID: 297762696896937442, guid: 11d75ebe3f5484a97ab26768bc2151b8, type: 3}
