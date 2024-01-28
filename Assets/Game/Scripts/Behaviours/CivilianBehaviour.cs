@@ -40,6 +40,16 @@ public class CivilianBehaviour : MonoBehaviour
     {
         while (true)
         {
+            // In every case, we want the civilian to be on move (except if dead)
+            if (_state != CivilianState.Dead)
+            {
+                if (agent.isOnNavMesh == false)
+                {
+                    Debug.LogError("A civilian is not on the navmesh!");
+                    agent.Warp(RandomNavmeshLocation(transform.position, 5));
+                }
+            }
+            
             if (_state == CivilianState.Idle)
             {
                 _state = CivilianState.Moving;
