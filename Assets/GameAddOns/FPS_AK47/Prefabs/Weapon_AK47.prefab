@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 832622390946768588}
   - component: {fileID: 5203803761154170980}
   - component: {fileID: 5987412452955364879}
+  - component: {fileID: 1814556285869578584}
   m_Layer: 0
   m_Name: Weapon_AK47
   m_TagString: Untagged
@@ -132,6 +133,7 @@ MonoBehaviour:
   AimOffset: {x: 0.063, y: 0.065, z: 0}
   AutomaticReload: 0
   HasPhysicalBullets: 1
+  ExternalShellEjector: 0
   ClipSize: 30
   ShellCasing: {fileID: 892496696467387432, guid: db7d4c446ff5b4bdea4cba50718813b9,
     type: 3}
@@ -275,6 +277,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1814556285869578584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243174873070656758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d4d7ee7f184408b72fd2a75cb2bb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTypes: 3
 --- !u!1 &5375985409310503816
 GameObject:
   m_ObjectHideFlags: 0
