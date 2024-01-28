@@ -73,7 +73,7 @@ namespace Game.Scripts.Behaviours
             EnemySpawned?.Invoke(enemy);
             _currentEnemies.Add(enemy.GetComponent<EnemyController>());
         }
-        
+         
         private void OnEnemyKilled(EnemyController killedEnemy)
         {
             if (_currentEnemies.Contains(killedEnemy))
