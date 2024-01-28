@@ -391,6 +391,61 @@ PrefabInstance:
       propertyPath: DeathVfxSpawnPoint
       value: 
       objectReference: {fileID: 839125551106316642}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.ctime1
+      value: 15035
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.ctime2
+      value: 52621
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.ctime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.ctime4
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285803770518491580, guid: d4babc6376afe429e9ee8ef75f5d670b,
+        type: 3}
+      propertyPath: OnHitBodyGradient.m_NumColorKeys
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6128054347312274211, guid: d4babc6376afe429e9ee8ef75f5d670b,
         type: 3}
       propertyPath: m_Name
