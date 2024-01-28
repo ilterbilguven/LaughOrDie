@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,7 @@ public enum CivilianState
 {
     Idle,
     Moving,
+    Escaping,
     Dead
 }
 
@@ -16,13 +18,14 @@ public class CivilianBehaviour : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     private Coroutine _movementCoroutine;
     private CivilianState _state;
+    private PlayerCharacterController _player;
 
     public void StartMovement()
     {
         animator.SetTrigger("Run");
         _movementCoroutine = StartCoroutine(MovementCoroutine());
     }
-    
+
     public void StopMovement()
     {
         animator.SetTrigger("Idle");
@@ -48,6 +51,27 @@ public class CivilianBehaviour : MonoBehaviour
                 {
                     _state = CivilianState.Idle;
                 }
+
+                if (Vector3.Distance(transform.position, _player.transform.position) < 5f)
+                {
+                    _state = CivilianState.Escaping;
+                    Vector3 APointAwayFromPlayer = transform.position +
+                                                   (transform.position - _player.transform.position).normalized * 5f;
+                    agent.SetDestination(RandomNavmeshLocation(APointAwayFromPlayer, 100f));
+                }
+            }
+            else if (_state == CivilianState.Escaping)
+            {
+                if (Vector3.Distance(transform.position, _player.transform.position) > 5f)
+                {
+                    _state = CivilianState.Idle;
+                }
+                else if (agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    Vector3 APointAwayFromPlayer = transform.position +
+                                                   (transform.position - _player.transform.position).normalized * 5f;
+                    agent.SetDestination(RandomNavmeshLocation(APointAwayFromPlayer, 100f));
+                }
             }
             else if (_state == CivilianState.Dead)
             {
@@ -57,14 +81,22 @@ public class CivilianBehaviour : MonoBehaviour
             yield return null;
         }
     }
-    
-    public Vector3 RandomNavmeshLocation(Vector3 point, float radius) {
+
+    public Vector3 RandomNavmeshLocation(Vector3 point, float radius)
+    {
         Vector3 randomDirection = point + Random.insideUnitSphere * radius;
         NavMeshHit hit;
         Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
-            finalPosition = hit.position;            
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+        {
+            finalPosition = hit.position;
         }
+
         return finalPosition;
+    }
+
+    public void SetPlayer(PlayerCharacterController player)
+    {
+        _player = player;
     }
 }

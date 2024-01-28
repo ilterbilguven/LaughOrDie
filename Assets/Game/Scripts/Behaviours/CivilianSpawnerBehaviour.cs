@@ -72,6 +72,7 @@ namespace Game.Scripts.Behaviours
         { 
             var civilianPrefab = civilianPrefabs[Random.Range(0, civilianPrefabs.Count)];
             var civilian = Instantiate(civilianPrefab, GetRandomPosAroundPlayer(), Quaternion.identity);
+            civilian.SetPlayer(Player);
             return civilian;
         }
 
