@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Game.Scripts.Controllers;
+using Game.Scripts.Helpers;
 using Unity.FPS.AI;
 using Unity.FPS.Game;
 using Unity.FPS.Gameplay;
@@ -31,6 +32,8 @@ namespace Game.Scripts.Behaviours
 
         [Header("Sound")] public AudioClip MovementSound;
         public MinMaxFloat PitchDistortionMovementSpeed;
+
+        [SerializeField] private RagdollHelper ragdollHelper;
 
         public AIState AiState { get; private set; }
         EnemyController m_EnemyController;
@@ -64,6 +67,7 @@ namespace Game.Scripts.Behaviours
 
             m_EnemyController.onAttack += OnAttack;
             m_EnemyController.onDamaged += OnDamaged;
+            m_EnemyController.EnemyDied += OnEnemyDied;
             m_EnemyController.SetPathDestinationToClosestNode();
 
             AiState = AIState.Follow;
@@ -73,6 +77,8 @@ namespace Game.Scripts.Behaviours
             DebugUtility.HandleErrorIfNullGetComponent<AudioSource, EnemyMobile>(m_AudioSource, this, gameObject);
             m_AudioSource.clip = MovementSound;
             m_AudioSource.Play();
+            
+            ragdollHelper.DisableRagdoll();
 
             _enemyLoopCoroutine = StartCoroutine(EnemyLoopCoroutine());
             GameController.GameEnded += OnGameEnded;
@@ -187,6 +193,12 @@ namespace Game.Scripts.Behaviours
             }
 
             Animator.SetTrigger(k_AnimOnDamagedParameter);
+        }
+        
+        private void OnEnemyDied()
+        {
+            ragdollHelper.EnableRagdoll();
+            Dispose();
         }
     }
 }

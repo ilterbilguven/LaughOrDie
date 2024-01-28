@@ -1,14 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Unity.FPS.AI
 {
     [RequireComponent(typeof(Health), typeof(Actor), typeof(NavMeshAgent))]
     public class EnemyController : MonoBehaviour
     {
+        public event Action EnemyDied;
+        
         [System.Serializable]
         public struct RendererIndexData
         {
@@ -369,7 +373,9 @@ namespace Unity.FPS.AI
             }
 
             // this will call the OnDestroy function
-            Destroy(gameObject, DeathDuration);
+            //Destroy(gameObject, DeathDuration);
+            NavMeshAgent.enabled = false;
+            EnemyDied?.Invoke();
         }
 
         void OnDrawGizmosSelected()
