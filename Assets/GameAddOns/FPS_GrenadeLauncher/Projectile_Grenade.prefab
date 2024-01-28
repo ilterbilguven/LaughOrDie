@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de99b30e1e73fd14e98cc5371da25d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 0.2
+  Radius: 4
   Root: {fileID: 8370189992117239106}
   Tip: {fileID: 8370189992117239106}
   MaxLifeTime: 5
@@ -122,7 +122,7 @@ MonoBehaviour:
   GravityDownAcceleration: 10
   TrajectoryCorrectionDistance: -1
   InheritWeaponVelocity: 0
-  Damage: 40
+  Damage: 500
   AreaOfDamage: {fileID: 1203337828444365110}
   RadiusColor: {r: 0, g: 1, b: 1, a: 0.49803922}
 --- !u!114 &1203337828444365110
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0244d6b9e98532469c7be0732490a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AreaOfEffectDistance: 2.5
+  AreaOfEffectDistance: 4
   DamageRatioOverDistance:
     serializedVersion: 2
     m_Curve:

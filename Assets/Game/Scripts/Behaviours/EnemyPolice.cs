@@ -198,7 +198,14 @@ namespace Game.Scripts.Behaviours
         private void OnEnemyDied()
         {
             ragdollHelper.EnableRagdoll();
+            StartCoroutine(Explode());
             Dispose();
+        }
+
+        private IEnumerator Explode()
+        {
+            yield return new WaitForSeconds(5);
+            Destroy(gameObject);
         }
     }
 }
