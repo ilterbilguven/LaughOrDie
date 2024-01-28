@@ -217,7 +217,11 @@ namespace Unity.FPS.Game
             m_PhysicalAmmoPool.Enqueue(nextShell);
         }
 
-        void PlaySFX(AudioClip sfx) => AudioUtility.CreateSFX(sfx, transform.position, AudioUtility.AudioGroups.WeaponShoot, 0.0f);
+        void PlaySFX(AudioClip sfx)
+        {
+            if (!sfx) return;
+            AudioUtility.CreateSFX(sfx, transform.position, AudioUtility.AudioGroups.WeaponShoot, 0.0f);
+        }
 
 
         void Reload()
@@ -322,19 +326,24 @@ namespace Unity.FPS.Game
                 {
                     if (!m_ContinuousShootAudioSource.isPlaying)
                     {
-                        m_ShootAudioSource.resource = ShootSfx;
-                        m_ShootAudioSource.Play();
-                        m_ShootAudioSource.PlayOneShot(ContinuousShootStartSfx);
-                        m_ContinuousShootAudioSource.Play();
+                        if (!m_ShootAudioSource.isPlaying && _shootStart) m_ContinuousShootAudioSource.Play();
+                        else if (!_shootStart)
+                        {
+                            m_ShootAudioSource.PlayOneShot(ContinuousShootStartSfx);
+                            _shootStart = true;
+                        }
                     }
                 }
                 else if (m_ContinuousShootAudioSource.isPlaying)
                 {
                     m_ShootAudioSource.PlayOneShot(ContinuousShootEndSfx);
                     m_ContinuousShootAudioSource.Stop();
+                    _shootStart = false;
                 }
             }
         }
+
+        private bool _shootStart;
 
         public void ShowWeapon(bool show)
         {
