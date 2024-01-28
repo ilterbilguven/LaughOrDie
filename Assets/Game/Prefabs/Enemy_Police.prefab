@@ -70,6 +70,7 @@ MonoBehaviour:
   AimOffset: {x: 0, y: 0, z: 0}
   AutomaticReload: 1
   HasPhysicalBullets: 0
+  ExternalShellEjector: 0
   ClipSize: 30
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
@@ -1136,6 +1137,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 868f5aec25ffe473784dc8d083fbafe6, type: 2}
+    - target: {fileID: 5866666021909216657, guid: cee87b383744f4b349af6db54d30bb83,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
