@@ -102,7 +102,7 @@ MonoBehaviour:
   PickupSfx: {fileID: 8300000, guid: 6f3e0904bbbace745bdef08cdbcdfec0, type: 3}
   PickupVfxPrefab: {fileID: 0}
   Weapon: {fileID: 3184958219604596622, guid: f46583e745abc4c249128bc42cc582fc, type: 3}
-  BulletCount: 30
+  BulletCount: 8
 --- !u!1 &6707193727552079300
 GameObject:
   m_ObjectHideFlags: 0
