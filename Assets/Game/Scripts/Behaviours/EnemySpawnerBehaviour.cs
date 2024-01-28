@@ -17,7 +17,7 @@ namespace Game.Scripts.Behaviours
         [SerializeField] private int maxEnemy;
         [SerializeField] private float spawnInterval;
         
-        [SerializeField] private EnemyPolice enemyPrefab;
+        [SerializeField] private List<EnemyPolice> enemyPrefabs;
         [SerializeField] private List<Transform> spawnPoints;
         
         private List<EnemyController> _currentEnemies;
@@ -62,7 +62,10 @@ namespace Game.Scripts.Behaviours
             }
         }
 
-        public void SpawnEnemy() {
+        public void SpawnEnemy() 
+        {
+            EnemyPolice enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+            
             var spawnPoint = RandomNavmeshLocation(spawnPoints[Random.Range(0, spawnPoints.Count)].position, 10f);
             var enemy = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
             enemy.GetComponent<NavMeshAgent>().Warp(spawnPoint);
