@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 namespace AiActors.Scripts
@@ -16,23 +17,25 @@ namespace AiActors.Scripts
             var forwardVelocity = Vector3.Project(Velocity, transform.forward);
             var rightVelocity = Vector3.Project(Velocity, transform.right);
 
-            UnityEditor.Handles.color = Color.cyan;
-            UnityEditor.Handles.DrawLine(transform.position, transform.position + new Vector3(0, 0, Velocity.z));
+#if UNITY_EDITOR
+            Handles.color = Color.cyan;
+            Handles.DrawLine(transform.position, transform.position + new Vector3(0, 0, Velocity.z));
             
-            UnityEditor.Handles.color = Color.white;
-            UnityEditor.Handles.DrawLine(transform.position, transform.position + new Vector3(Velocity.x, 0, 0));
+            Handles.color = Color.white;
+            Handles.DrawLine(transform.position, transform.position + new Vector3(Velocity.x, 0, 0));
 
-            UnityEditor.Handles.color = Color.red;
-            UnityEditor.Handles.DrawLine(transform.position, transform.position + transform.right * 10, 1);
+            Handles.color = Color.red;
+            Handles.DrawLine(transform.position, transform.position + transform.right * 10, 1);
             
-            UnityEditor.Handles.color = Color.blue;
-            UnityEditor.Handles.DrawLine(transform.position, transform.position + transform.forward * 10, 1);
+            Handles.color = Color.blue;
+            Handles.DrawLine(transform.position, transform.position + transform.forward * 10, 1);
 
-            UnityEditor.Handles.color = Color.green;
-            UnityEditor.Handles.DrawLine(transform.position, transform.position + forwardVelocity, 1);
+            Handles.color = Color.green;
+            Handles.DrawLine(transform.position, transform.position + forwardVelocity, 1);
 
-            UnityEditor.Handles.color = Color.magenta;
-            UnityEditor.Handles.DrawLine(transform.position, transform.position + rightVelocity, 1);
+            Handles.color = Color.magenta;
+            Handles.DrawLine(transform.position, transform.position + rightVelocity, 1);
+#endif
         }
         #endif
 
